@@ -2,6 +2,8 @@
 
 because the original page was made in a website builder and thats just oof
 
+![](https://i.vgy.me/KPsCYW.png)
+
 ## how to run
 
 you need a recent python 3, i tested on 3.8.0
