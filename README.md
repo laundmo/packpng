@@ -15,7 +15,9 @@ now you can access the page on localhost. the server will restart if it detects 
 ## directory structure
 
 data/ - json files with data displayed on page, such as FAQ and tested seeds. i went with json for easy editing.
+
 static/ - static files such as images or js/css. get url to static files in a template like this `{{ url_for('static', filename='pack.png') }}`
+
 templates/ - jinja2 templates. layout.html is the base template, in which other content gets inserted using blocks.
 
 ## writing templates/pages.
