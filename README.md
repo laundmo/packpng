@@ -1,4 +1,5 @@
 # packpng.com rewrite
+[![Coverage Status](https://coveralls.io/repos/github/laundmo/packpng/badge.svg?branch=master)](https://coveralls.io/github/laundmo/packpng?branch=master)
 
 because the original page was made in a website builder and thats just oof
 
