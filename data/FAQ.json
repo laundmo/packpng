@@ -1,0 +1,50 @@
+[
+    {
+        "Q": "What is this about?",
+        "A": "This is about finding the seed of the mysterious \"pack.png\"image that minecraft uses. All of this started with a YouTube video made by SalC1"
+    },
+    {
+        "Q": "Are you just trying random seeds until you find it?",
+        "A": "Nope! That would actually take an impossible amount of time."
+    },
+    {
+        "Q": "Can we use the method they did with PewDiePie's seed?",
+        "A": "Nope! They had more information than we did, and actually have people who actually did most of the work finding it in the Discord server right now!(Link below)"
+    },
+    {
+        "Q": "Have you tried seed X?",
+        "A": "Maybe! But trying lots of different seeds is really just a waste of time sadly :("
+    },
+    {
+        "Q": "How can I help crack the seed",
+        "A": "Unless you have access to enterprise-grade computing hardware, then you can't."
+    },
+    {
+        "Q": "What is pack.png?",
+        "A": "The image minecraft used for the default texture pack in the texturepack selection screen."
+    },
+    {
+        "Q": "What information could you extract from the image?",
+        "A": "player position can be determined through cloud pattern and axis could be determined through the orientation of the water texture"
+    },
+    {
+        "Q": "Who made this website?",
+        "A": "CactusDuper(With lots of help from the community <3)!"
+    },
+    {
+        "Q": "Do you have enough processing power? I could rent out stuff from X",
+        "A": "Yes, we have plenty of processing power. To be exact, 2-6 NVIDIA DGX-2 Supercomputers."
+    },
+    {
+        "Q": "How many seeds are there?",
+        "A": "2^48*0.82 seeds. "
+    },
+    {
+        "Q": "What's that number exactly? A billion?",
+        "A": "230,809,480,902,738. 230.8 Trillion "
+    },
+    {
+        "Q": "Can I help with this?",
+        "A": "Yes! We'd love your help! The Discord is at the very bottom. Please make sure to read all of the FAQ and read the rules channel when you join. "
+    }
+]

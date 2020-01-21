@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% set active_page = "faq" %}
+
+{% block content %}
+<div class="container w-75">
+    <div class="panel-group" id="faqAccordion">
+        {% for q_a in faq %}
+        <div class="card">
+                <div class="card-header p-2" id="heading{{loop.index}}">
+                    <h4 class="mb-0">
+                    <button class="btn btn-link collapsed w-100 text-left" type="button" data-toggle="collapse" data-target="#collapse{{loop.index}}" aria-expanded="false" aria-controls="collapse{{loop.index}}">
+                      Q: {{q_a["Q"]}}
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapse{{loop.index}}" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                            {{q_a["A"]}}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

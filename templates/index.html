@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% set active_page = "project" %}
+
+{% block content %}
+<div class="container w-75">
+    <h1 class="text-center"> The pack.png project<br><small class="text-muted">to find the seed of the most iconic image
+            in minecraft
+            history</small></h1>
+    <img class="image-wrapper float-left pr-3" src="{{url_for('static', filename='pack.png')}}"
+        alt="original pack.png" />
+    <div class="single-post-content-wrapper p-3">
+        <p class="text-justify">This project was started by <a href="https://www.youtube.com/watch?v=lbR8ZY1Nsm8">this Video</a> by Sal<sup>C1</sup>. The pack.png image can be seen within the java edition Minecraft client, when
+            selecting
+            a multiplayer server without a icon, or as the icon of the default texture pack. This image has been in
+            Minecraft for a long time, which explains why it looks off, compared to recent versions of Minecraft. This
+            project aims to find the seed of the world this image was taken from.
+        </p>
+    </div>
+    <div>
+    <h3>What we know<br><small class="text-muted">overview</small></h3>
+    <ul>
+        {% for known in what_we_know %}
+        <li>
+            {{known["fact"]|safe}}
+            {% if known["discord_user"]|length > 0 %}
+            <a class="collapse" id="usercollapse"
+                href="https://discordapp.com/users/{{known["discord_id"]}}">{{known["discord_user"]}}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
+        aria-expanded="false" aria-controls="usercollapse">
+        Toggle user credits
+    </button>
+    </div>
+    <br>
+    <div>
+    <h3>Wrong seeds</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Seed</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for seed in seeds %}
+            <tr>
+                <td>{{seed}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
