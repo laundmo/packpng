@@ -1,6 +1,7 @@
 from pathlib import Path
 from flask import Flask, render_template
 import json
+import requests
 
 app = Flask(__name__)
 
@@ -38,6 +39,17 @@ def gallery():
     with open('./data/image_captions.json', encoding="utf8") as images_json:
         images = json.load(images_json)
         return render_template('gallery.html', images=images)
+
+@app.route('/about/')
+def about():
+    contributors = requests.get("https://api.github.com/repos/laundmo/packpng/stats/contributors").json()
+    contributors = sorted(contributors, key=lambda x: x['total'], reverse=True)
+    for contrib in contributors:
+        added = sum([w['a'] for w in contrib['weeks']])
+        deleted = sum([w['d'] for w in contrib['weeks']])
+        contrib["added"] = added
+        contrib["deleted"] = deleted
+    return render_template('about.html', contributors=contributors)
 
 
 if __name__ == '__main__':

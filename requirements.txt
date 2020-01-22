@@ -2,3 +2,4 @@ flask
 coverage
 coveralls
 pillow
+requests

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set active_page = "about" %}
+
+{% block head%}
+<style>
+a.unlink {
+  color: inherit;
+  text-decoration: inherit;
+}
+a.unlink:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="card-columns">
+{% for contributor in contributors %}
+<a class="card unlink" style="width: 15vw;" href="{{contributor['author']['html_url']}}">
+    <img class="card-img-top" src="{{ contributor['author']['avatar_url'] }}" alt="{{ contributor['author']['login'] }} github profile image">
+    <div class="card-body">
+        <h4>{{ contributor['author']['login']}}</h4>
+        <p class="card-text">{{ contributor['total'] }} commits</p>
+        <small class="card-text text-success">{{ contributor['added'] }}++</small>
+        <small class="card-text text-danger">{{ contributor['deleted'] }}--</small>
+    </div>
+</a>
+{%endfor%}
+</div>
+{% endblock %}
