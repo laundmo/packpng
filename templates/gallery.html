@@ -9,27 +9,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"
     integrity="sha256-w14QFJrxOYkUnF0hb8pVFCSgYcsF0hMIKrqGb8A7J8A=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css" integrity="sha256-ZKOGvp7YVwX26g2d0ooDvbSBQSEiIi4Bd9FuK+12Zk0=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" integrity="sha256-bIPvSCQ7+G5GbIXDt2B+9AMpCmFtxTVLU+aWAIPzL8I=" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block content %}
-<div id="lightgallery">
+</div>
+<div id="mygallery">
     {% for img in images %}
-        <a class="border rounded float-left card" width="128px" href="{{ url_for('static', filename=img['image_path']|safe) }}"
-            data-sub-html=".caption">
-            <img src=" {{ url_for('static', filename=img['thumbnail_path']|safe) }}" />
-            <div class="caption border rounded" width="128px">
-                <p class="text-justify">{{ img['message'] }}</p>
-            </div>
-        </a>
+    <a href="{{ url_for('static', filename=img['image_path']|safe) }}" data-sub-html="{{ img['message'] }}" title="{{ img['message'] }}">
+        <img src=" {{ url_for('static', filename=img['thumbnail_path']|safe) }}" />
+    </a>
     {% endfor %}
 </div>
 <script type="text/javascript">
     $(document).ready(function () {
-        $("#lightgallery").lightGallery({
-            subHtmlSelectorRelative: true
+        $('#mygallery').justifiedGallery({
+            lastRow: 'nojustify',
+            rowHeight: 128,
+            margins: 3
+        }).on('jg.complete', function () {
+            $(this).lightGallery({
+                subHtmlSelectorRelative: true
+            });
         });
     });
 </script>
-{% endblock %}
+<div>
+    {% endblock %}
