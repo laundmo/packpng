@@ -1,5 +1,5 @@
 # packpng.com rewrite
-[![Coverage Status](https://coveralls.io/repos/github/laundmo/packpng/badge.svg?branch=master)](https://coveralls.io/github/laundmo/packpng?branch=master) [![Build Status](https://travis-ci.com/laundmo/packpng.svg?branch=master)](https://travis-ci.com/laundmo/packpng)
+[![Coverage Status](https://coveralls.io/repos/github/laundmo/packpng/badge.svg?branch=master&service=github)](https://coveralls.io/github/laundmo/packpng?branch=master) [![Build Status](https://travis-ci.com/laundmo/packpng.svg?branch=master)](https://travis-ci.com/laundmo/packpng)
 
 because the original page was made in a website builder and thats just oof
 
