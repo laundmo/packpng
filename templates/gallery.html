@@ -16,15 +16,13 @@
 {% block content %}
 <div id="lightgallery">
     {% for img in images %}
-    <div class="border rounded float-left card" width="128px">
-        <a href="{{ url_for('static', filename=img['image_path']|safe) }}"
+        <a class="border rounded float-left card" width="128px" href="{{ url_for('static', filename=img['image_path']|safe) }}"
             data-sub-html=".caption">
             <img src=" {{ url_for('static', filename=img['thumbnail_path']|safe) }}" />
             <div class="caption border rounded" width="128px">
                 <p class="text-justify">{{ img['message'] }}</p>
             </div>
         </a>
-    </div>
     {% endfor %}
 </div>
 <script type="text/javascript">
