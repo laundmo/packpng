@@ -1,20 +1,36 @@
 import json
 from pathlib import Path
-
+import os
 import requests
 from flask import Flask, render_template
-
+from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
-from flask_caching import Cache
-
 app = Flask(__name__)
-limiter = Limiter(
-    key_func=get_remote_address,
-    default_limits=["30 per minute", "1 per second"]
-)
-cache = Cache(config={'CACHE_TYPE': 'simple'})
+try:
+    if os.environ["PRODUCTION"]:
+        production = True
+    else:
+        production = False
+except KeyError:
+    production = False
+
+if production:
+    limiter = Limiter(
+        key_func=get_remote_address,
+        default_limits=["30 per minute", "1 per second"]
+    )
+else:
+    limiter = Limiter(
+        key_func=get_remote_address,
+        default_limits=["100 per second"]
+    )
+
+if production:
+    cache = Cache(config={'CACHE_TYPE': 'uwsgi', 'CACHE_UWSGI_NAME':'packpng@localhost:3031'})
+else:
+    cache = Cache(config={'CACHE_TYPE': 'null'})
 
 limiter.init_app(app)
 cache.init_app(app)
