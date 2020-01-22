@@ -16,14 +16,14 @@ def index():
 @app.route('/faq/')
 def faq():
     with open('./data/faq.json', encoding="utf8") as faq_json:
-            faq = json.load(faq_json)
-            return render_template('faq.html', faq=faq)
+        faq = json.load(faq_json)
+        return render_template('faq.html', faq=faq)
 
 @app.route('/contributors/')
 def contributors():
     with open('./data/contributors.json', encoding="utf8") as contrib_json:
-            contributors = json.load(contrib_json)
-            return render_template('contributors.html', contributors=contributors)
+        contributors = json.load(contrib_json)
+        return render_template('contributors.html', contributors=contributors)
 
 @app.route('/google_doc/')
 def google_doc():
@@ -35,13 +35,9 @@ def timeline():
 
 @app.route('/gallery/')
 def gallery():
-    staticdir = Path('./static/')
-    images = list((staticdir / "gallery").glob('**/*'))
-    thumbs = [staticdir / "thumbnails" / str("thumbnail_"+p.name) for p in images]
-    images = map(lambda x: x.relative_to(staticdir).as_posix(), images)
-    thumbs = map(lambda x: x.relative_to(staticdir).as_posix(), thumbs)
-    imthumbs = list(zip(images, thumbs))
-    return render_template('gallery.html', images=imthumbs)
+    with open('./data/image_captions.json', encoding="utf8") as images_json:
+        images = json.load(images_json)
+        return render_template('gallery.html', images=images)
 
 
 if __name__ == '__main__':

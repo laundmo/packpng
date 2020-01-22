@@ -15,15 +15,23 @@
 
 {% block content %}
 <div id="lightgallery">
-    {% for img, thumb in images %}
-    <a href="{{ url_for('static', filename=img|safe) }}">
-        <img src=" {{ url_for('static', filename=thumb|safe) }}" />
-    </a>
+    {% for img in images %}
+    <div class="border rounded float-left card" width="128px">
+        <a href="{{ url_for('static', filename=img['image_path']|safe) }}"
+            data-sub-html=".caption">
+            <img src=" {{ url_for('static', filename=img['thumbnail_path']|safe) }}" />
+            <div class="caption border rounded" width="128px">
+                <p class="text-justify">{{ img['message'] }}</p>
+            </div>
+        </a>
+    </div>
     {% endfor %}
 </div>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $("#lightgallery").lightGallery(); 
+    $(document).ready(function () {
+        $("#lightgallery").lightGallery({
+            subHtmlSelectorRelative: true
+        });
     });
 </script>
 {% endblock %}
