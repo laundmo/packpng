@@ -4,3 +4,4 @@ coveralls
 pillow
 requests
 Flask-Limiter
+Flask-Caching

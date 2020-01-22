@@ -7,15 +7,20 @@ from flask import Flask, render_template
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
+from flask_caching import Cache
 
 app = Flask(__name__)
 limiter = Limiter(
-    app,
     key_func=get_remote_address,
     default_limits=["30 per minute", "1 per second"]
 )
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+
+limiter.init_app(app)
+cache.init_app(app)
 
 @app.route('/')
+@cache.cached(timeout=120)
 def index():
     with open('./data/seeds.json', encoding="utf8") as seeds_json:
         with open('./data/what_we_know.json', encoding="utf8") as wwk_json:
@@ -25,33 +30,39 @@ def index():
 
 
 @app.route('/faq/')
+@cache.cached(timeout=120)
 def faq():
     with open('./data/faq.json', encoding="utf8") as faq_json:
         faq = json.load(faq_json)
         return render_template('faq.html', faq=faq)
 
 @app.route('/contributors/')
+@cache.cached(timeout=120)
 def contributors():
     with open('./data/contributors_no_edit.json', encoding="utf8") as contrib_json:
         contributors = json.load(contrib_json)
         return render_template('contributors.html', contributors=contributors)
 
 @app.route('/google_doc/')
+@cache.cached(timeout=120)
 def google_doc():
     return render_template('google_doc.html')
 
 @app.route('/timeline/')
+@cache.cached(timeout=120)
 def timeline():
     return render_template('timeline.html')
 
 @app.route('/gallery/')
+@cache.cached(timeout=120)
 def gallery():
     with open('./data/image_captions.json', encoding="utf8") as images_json:
         images = json.load(images_json)
         return render_template('gallery.html', images=images)
 
 @app.route('/about/')
-@limiter.limit("50 per hour; 1 per 5 seconds")
+@limiter.limit("50 per hour; 1 per 2 seconds")
+@cache.cached(timeout=120)
 def about():
     contributors = requests.get("https://api.github.com/repos/laundmo/packpng/stats/contributors").json()
     contributors = sorted(contributors, key=lambda x: x['total'], reverse=True)
@@ -61,6 +72,15 @@ def about():
         contrib["added"] = added
         contrib["deleted"] = deleted
     return render_template('about.html', contributors=contributors)
+
+# example route config
+#
+# @app.route('/mypage/')
+# @limiter.limit("50 per 2 hour; 1 per 8 seconds")
+# @cache.cached(timeout=50)
+# def mypage():
+#     a = 1 + 1
+#     return render_template('mypage.html', a=a)
 
 
 if __name__ == '__main__':
