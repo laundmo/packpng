@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% set active_page = "gallery" %}
+
+{% block head%}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lg-transitions.min.css"
+    integrity="sha256-0vtvedekqwImzpY0zJYKRDDEiEWSGclW01CGiznyB4M=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css"
+    integrity="sha256-8rfHbJr+ju3Oc099jFJMR1xAPu8CTPHU8uP5J3X/VAY=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"
+    integrity="sha256-w14QFJrxOYkUnF0hb8pVFCSgYcsF0hMIKrqGb8A7J8A=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+
+{% endblock %}
+
+{% block content %}
+<div id="lightgallery">
+    {% for img, thumb in images %}
+    <a href="{{ url_for('static', filename=img|safe) }}">
+        <img src=" {{ url_for('static', filename=thumb|safe) }}" />
+    </a>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#lightgallery").lightGallery(); 
+    });
+</script>
+{% endblock %}

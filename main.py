@@ -33,8 +33,17 @@ def google_doc():
 def timeline():
     return render_template('timeline.html')
 
+@app.route('/gallery/')
+def gallery():
+    staticdir = Path('./static/')
+    images = list((staticdir / "gallery").glob('**/*'))
+    thumbs = [staticdir / "thumbnails" / str("thumbnail_"+p.name) for p in images]
+    images = map(lambda x: x.relative_to(staticdir).as_posix(), images)
+    thumbs = map(lambda x: x.relative_to(staticdir).as_posix(), thumbs)
+    imthumbs = list(zip(images, thumbs))
+    return render_template('gallery.html', images=imthumbs)
 
 
 if __name__ == '__main__':
-    extra_files = [str(p.resolve()) for p in Path('.\\').glob('**/*')] # list of all files in the project, so flask knows where to look for changes
+    extra_files = [str(p.resolve()) for p in Path('./').glob('**/*')] # list of all files in the project, so flask knows where to look for changes
     app.run(extra_files=extra_files, debug=True)
