@@ -1,9 +1,19 @@
-from pathlib import Path
-from flask import Flask, render_template
 import json
+from pathlib import Path
+
 import requests
+from flask import Flask, render_template
+
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
+
 
 app = Flask(__name__)
+limiter = Limiter(
+    app,
+    key_func=get_remote_address,
+    default_limits=["30 per minute", "1 per second"]
+)
 
 @app.route('/')
 def index():
@@ -41,6 +51,7 @@ def gallery():
         return render_template('gallery.html', images=images)
 
 @app.route('/about/')
+@limiter.limit("50 per hour; 1 per 5 seconds")
 def about():
     contributors = requests.get("https://api.github.com/repos/laundmo/packpng/stats/contributors").json()
     contributors = sorted(contributors, key=lambda x: x['total'], reverse=True)
