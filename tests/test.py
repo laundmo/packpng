@@ -23,4 +23,12 @@ class FlaskTests(unittest.TestCase):
         result = self.app.get('/faq/') 
 
         # assert the status code of the response
-        self.assertEqual(result.status_code, 200) 
+        self.assertEqual(result.status_code, 200)
+    
+    def test_contributors_status_code(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        result = self.app.get('/contributors/') 
+
+        # assert the status code of the response
+        self.assertEqual(result.status_code, 200)  
