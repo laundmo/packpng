@@ -35,6 +35,8 @@ def mypage(): # function doesnt have to be the same name as route
 [related flask quickstart](https://flask.palletsprojects.com/en/1.1.x/quickstart/#routing)
 
 then you have to add the page to the navbar, if it should appear there.
-go to `templates/layout.html` and look at the top of the file. add a new element to the list like this `('/mypage', 'mypage', 'My Page'),`, where the first string is the route, the second is the ID, and the third the displayed name.
+go to `templates/layout.html` and look at the top of the file. add a new element to the list like this `('mypage', 'My Page'),`, the first string is the name of the python function, and the second the name to be displayed.
 
 make sure to set the correct active page in your template using `{% set active_page = "mypage" %}`. here we use the ID we defined before
+
+link to pages with `{{ url_for('python function name') }}` and to static files with `{{ url_for('static', filename='pack.png') }}`

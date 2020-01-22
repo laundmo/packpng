@@ -1,16 +1,16 @@
 {% set navigation_bar = [
-    ('/', 'project', 'The Project'),
-    ('/faq/', 'faq', 'FAQ'),
-    ('/contributors/', 'contributors', 'Contributors'),
-    ('/timeline', 'timeline', 'Timeline'),
-    ('/google_doc/', 'google_doc', 'Google Doc'),
-    ('/gallery/', 'gallery', 'Gallery'),
+    ('project', 'The Project'),
+    ('faq', 'FAQ'),
+    ('contributors', 'Contributors'),
+    ('timeline', 'Timeline'),
+    ('google_doc', 'Google Doc'),
+    ('gallery', 'Gallery'),
 ] -%}
 {#
-    this adds pages to the navbar. the pages need to have a route in the main.py first, to be reachable, 
+    this adds pages to the navbar. the pages need to have a route in the main.py first. the first part is the name of the function in main.py, the secodn one is the display name 
 #}
 
-{% set active_page = active_page|default('index') -%}
+{% set active_page = active_page|default('project') -%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +18,7 @@
         <title>pack.png</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico')}}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -48,10 +48,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
-                    {% for href, id, caption in navigation_bar %}
-                    <li class="nav-item {% if id == active_page %}active{% endif
+                    {% for funcname, caption in navigation_bar %}
+                    <li class="nav-item {% if funcname == active_page %}active{% endif
                         %}">
-                        <a class="nav-link" href="{{ href|e }}">{{ caption|e }}{% if id == active_page %}<span
+                        <a class="nav-link" href="{{ url_for(href) }}">{{ caption|e }}{% if funcname == active_page %}<span
                                 class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                     {% endfor %}
