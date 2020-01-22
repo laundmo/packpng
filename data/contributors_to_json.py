@@ -12,5 +12,5 @@ with open("data/contributors.csv", encoding="utf-8") as contrib_f:
         user = {"name": name, "time":dt.isoformat(), "comment":comment}
         contributors.append(user)
 
-with open("data/contributors.json", "w+") as contrib_json_f:
+with open("data/contributors_no_edit.json", "w+") as contrib_json_f:
     json.dump(contributors, contrib_json_f)
