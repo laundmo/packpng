@@ -1,0 +1,38 @@
+[
+  {
+    "path" : "/static/thumbnails/thumbnail_acacia_tree_evening.png"
+    "message" : "A drawing receration of pack.png"
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_blockcount.jpg"
+    "message" : "A count of how many blocks total are in the pack.png image"
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_ingame_pixelart2.png"
+    "message" : "Map art of pack.png"
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_ingame_pixelart.png"
+    "message" : "Pixel art of pack.png in minecraft"
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_pack.png"
+    "message" : ""
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_rebuilt1.jpg"
+    "message" : "Image from the pack.png terrain rebuilding project"
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_unknown_upscale_1.png"
+    "message" : ""
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_upscale.png"
+    "message" : ""
+  },
+  {
+    "path" : "/static/thumbnails/thumbnail_unknown_upscale_2.png"
+    "message" : "An upcaled image of pack.png by a custom AI"
+  }
+]
