@@ -1,6 +1,7 @@
 from main import app
 import unittest 
 
+
 class FlaskTests(unittest.TestCase): 
 
     def setUp(self):
@@ -48,3 +49,19 @@ class FlaskTests(unittest.TestCase):
 
         # assert the status code of the response
         self.assertEqual(result.status_code, 200)
+        
+
+
+class ScriptTests(unittest.TestCase): 
+    def test_thumbnails(self):
+        try:
+            import static.generate_thumbnails
+        except Exception as e:
+            self.fail(f"generate_thumbnails.py failed: {e}")
+        
+    
+    def test_contributor_converter(self):
+        try:
+            import data.contributors_to_json
+        except Exception as e:
+            self.fail(f"contributors_to_json.py failed: {e}")
