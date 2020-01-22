@@ -1,5 +1,5 @@
 {% set navigation_bar = [
-    ('project', 'The Project'),
+    ('index', 'The Project'),
     ('faq', 'FAQ'),
     ('contributors', 'Contributors'),
     ('timeline', 'Timeline'),
@@ -51,7 +51,7 @@
                     {% for funcname, caption in navigation_bar %}
                     <li class="nav-item {% if funcname == active_page %}active{% endif
                         %}">
-                        <a class="nav-link" href="{{ url_for(href) }}">{{ caption|e }}{% if funcname == active_page %}<span
+                        <a class="nav-link" href="{{ url_for(funcname) }}">{{ caption|e }}{% if funcname == active_page %}<span
                                 class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                     {% endfor %}
