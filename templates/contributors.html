@@ -24,7 +24,7 @@
                     <div class="text_cell_div_small">{{ contrib["name"] }}</div>
                 </td>
                 <td class="text_cell_td">
-                    <div class="text_cell_div">{{ contrib["comment"] }}</div>
+                    <div class="text_cell_div">{{ contrib["comment"]|urlize(40, true) }}</div>
                 </td>
             </tr>
             {% endfor %}

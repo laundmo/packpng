@@ -25,6 +25,14 @@ def contributors():
             contributors = json.load(contrib_json)
             return render_template('contributors.html', contributors=contributors)
 
+@app.route('/google_doc/')
+def google_doc():
+    return render_template('google_doc.html')
+
+@app.route('/timeline/')
+def timeline():
+    return render_template('timeline.html')
+
 
 
 if __name__ == '__main__':

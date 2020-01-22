@@ -1,7 +1,9 @@
 {% set navigation_bar = [
     ('/', 'project', 'The Project'),
     ('/faq/', 'faq', 'FAQ'),
-    ('/contributors/', 'contributors', 'Contributors')
+    ('/contributors/', 'contributors', 'Contributors'),
+    ('/timeline', 'timeline', 'Timeline'),
+    ('/google_doc/', 'google_doc', 'Google Doc'),
 ] -%}
 {#
     this adds pages to the navbar. the pages need to have a route in the main.py first, to be reachable, 
@@ -17,9 +19,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        {% block head %}
-
-        {%endblock%}
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
             crossorigin="anonymous"></script>
@@ -29,6 +28,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+            {% block head %}
+
+            {%endblock%}
     </head>
 
     <body>
@@ -54,13 +56,16 @@
                 </ul>
             </div>
         </nav>
+        <div style="position: fixed; bottom: -5px; right: 0;">
+                <iframe frameBorder="0" height="500px"
+                    src="https://discordapp.com/widget?id=436405308458401803&theme=dark">
+                </iframe>
+        </div>
         <div class="container-fluid">
             {% block content %}
             {% endblock %}
         </div>
-        <div class="container text-center">
-            <iframe frameBorder="0" height="500px" src="https://discordapp.com/widget?id=436405308458401803&theme=dark">
-            </iframe>
-        </div>
+
     </body>
+
 </html>
