@@ -31,4 +31,4 @@ class FlaskTests(unittest.TestCase):
         result = self.app.get('/contributors/') 
 
         # assert the status code of the response
-        self.assertEqual(result.status_code, 200)  
+        self.assertEqual(result.status_code, 200)
