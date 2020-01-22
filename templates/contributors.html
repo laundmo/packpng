@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% set active_page = "contributors" %}
+
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='table_stuff.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Username</th>
+                <th scope="col">Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contrib in contributors %}
+            <tr>
+                <td>{{ contrib["time"] }}</td>
+                <td class="text_cell_td">
+                    <div class="text_cell_div_small">{{ contrib["name"] }}</div>
+                </td>
+                <td class="text_cell_td">
+                    <div class="text_cell_div">{{ contrib["comment"] }}</div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

@@ -19,6 +19,13 @@ def faq():
             faq = json.load(faq_json)
             return render_template('faq.html', faq=faq)
 
+@app.route('/contributors/')
+def contributors():
+    with open('./data/contributors.json', encoding="utf8") as contrib_json:
+            contributors = json.load(contrib_json)
+            return render_template('contributors.html', contributors=contributors)
+
+
 
 if __name__ == '__main__':
     extra_files = [str(p.resolve()) for p in Path('.\\').glob('**/*')] # list of all files in the project, so flask knows where to look for changes
