@@ -49,7 +49,14 @@ class FlaskTests(unittest.TestCase):
 
         # assert the status code of the response
         self.assertEqual(result.status_code, 200)
-        
+    
+    def test_gallery_status_code(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        result = self.app.get('/gallery/') 
+
+        # assert the status code of the response
+        self.assertEqual(result.status_code, 200)
 
 
 class ScriptTests(unittest.TestCase): 
