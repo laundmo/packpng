@@ -1,0 +1,29 @@
+---- ExifTool ----
+ExifTool Version Number         : 11.84
+---- File ----
+File Name                       : pack.png
+Directory                       : .
+File Size                       : 27 kB
+File Modification Date/Time     : 2010:11:08 16:07:18+01:00
+File Access Date/Time           : 2020:01:22 14:35:16+01:00
+File Permissions                : rw-rw-rw-
+File Type                       : PNG
+File Type Extension             : png
+MIME Type                       : image/png
+---- PNG ----
+Image Width                     : 128
+Image Height                    : 128
+Bit Depth                       : 8
+Color Type                      : RGB with Alpha
+Compression                     : Deflate/Inflate
+Filter                          : Adaptive
+Interlace                       : Noninterlaced
+SRGB Rendering                  : Perceptual
+Gamma                           : 2.2
+Pixels Per Unit X               : 3779
+Pixels Per Unit Y               : 3779
+Pixel Units                     : meters
+Software                        : Paint.NET v3.5.5
+---- Composite ----
+Image Size                      : 128x128
+Megapixels                      : 0.016
