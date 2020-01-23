@@ -95,7 +95,8 @@ def about():
 @app.route('/redeploy', methods = ['POST'])
 def redeploy():
     signature = request.headers.get('X-Hub-Signature')
-    match, digest = verify_hmac_hash(request.data, signature)
+    raw_data = request.get_data() 
+    match, digest = verify_hmac_hash(raw_data, signature)
     if match:
         if request.headers.get('X-GitHub-Event') == "ping":
             return "OK"
