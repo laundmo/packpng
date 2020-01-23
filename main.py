@@ -101,4 +101,4 @@ def about():
 
 if __name__ == '__main__':
     extra_files = [str(p.resolve()) for p in Path('./').glob('**/*')] # list of all files in the project, so flask knows where to look for changes
-    app.run(extra_files=extra_files, debug=True)
+    app.run('0.0.0.0', extra_files=extra_files, debug=True)
