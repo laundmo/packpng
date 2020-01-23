@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% set active_page = "details" %}
+
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='table_stuff.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h2>pack.png Metadata</h2>
+<p>extracted using ExifTool</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Metadata</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name_value in metadata %}
+            <tr>
+                <td class="text_cell_td">{{ name_value[0] }}</td>
+                <td class="text_cell_td">{{ name_value[1] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

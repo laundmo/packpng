@@ -27,4 +27,4 @@ else:
 if production:
     cache = Cache(config={'CACHE_TYPE': 'uwsgi', 'CACHE_UWSGI_NAME':'packpng@localhost:3031'})
 else:
-    cache = Cache(config={'CACHE_TYPE': 'null'})
+    cache = Cache(config={'CACHE_TYPE': 'null'}) # use type 'simple' to test caching

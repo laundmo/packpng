@@ -69,3 +69,12 @@ def about():
         contrib["added"] = added
         contrib["deleted"] = deleted
     return render_template('about.html', contributors=contributors)
+
+@main_blueprint.route('/details/')
+@cache.cached(timeout=120)
+def details():
+    with open('./data/pack_metadata.txt', encoding="utf8") as metadata_file:
+        lines = metadata_file.readlines()
+        lines = filter(lambda l: l[0] != "-", lines)
+        lines = [[f.strip() for f in l.split(":")] for l in lines]
+        return render_template('details.html', metadata=lines)
