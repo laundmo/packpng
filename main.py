@@ -77,7 +77,7 @@ def gallery():
         return render_template('gallery.html', images=images)
 
 @app.route('/about/')
-@limiter.limit("50 per hour; 1 per 2 seconds")
+@limiter.limit("5 per minute; 1 per 10 seconds")
 @cache.cached(timeout=120)
 def about():
     contributors = requests.get("https://api.github.com/repos/laundmo/packpng/stats/contributors").json()
