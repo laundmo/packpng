@@ -96,13 +96,16 @@ def about():
 def redeploy():
     signature = request.headers.get('X-Hub-Signature')
     if verify_hmac_hash(request.data, signature):
-        try:
-            if "deploy" in request.form['ref']:
-                subprocess.Popen("./pull_restart.sh", shell=True, executable='/bin/bash')
-                return "started"
-            return "wrong branch"
-        except KeyError:
-            pass
+        if request.headers.get('X-GitHub-Event') == "ping":
+            return "OK"
+        if request.headers.get('X-GitHub-Event') == "push":
+            try:
+                if "deploy" in request.form['ref']:
+                    subprocess.Popen("./pull_restart.sh", shell=True, executable='/bin/bash')
+                    return "started"
+                return "wrong branch"
+            except KeyError:
+                pass
     return ("you cannot do this", 401)
 
 def verify_hmac_hash(data, signature):
