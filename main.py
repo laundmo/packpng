@@ -9,7 +9,7 @@ from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 try:
-    if os.environ["PRODUCTION"]:
+    if os.environ["PRODUCTION"] == "True":
         production = True
     else:
         production = False
