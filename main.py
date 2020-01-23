@@ -98,15 +98,15 @@ def redeploy():
     if verify_hmac_hash(request.data, signature):
         if request.headers.get('X-GitHub-Event') == "ping":
             return "OK"
-        if request.headers.get('X-GitHub-Event') == "push":
-            try:
-                if "deploy" in request.form['ref']:
-                    subprocess.Popen("./pull_restart.sh", shell=True, executable='/bin/bash')
-                    return "started"
-                return "wrong branch"
-            except KeyError:
-                pass
-    return ("you cannot do this", 401)
+        elif request.headers.get('X-GitHub-Event') == "push":
+            if "deploy" in request.form['ref']:
+                subprocess.Popen("./pull_restart.sh", shell=True, executable='/bin/bash')
+                return "started"
+            return "wrong branch"
+        else:
+            return ("wrong event type", 401)
+    else:
+        return ("could not verify signature", 401)
 
 def verify_hmac_hash(data, signature):
     github_secret = bytes(os.environ['GITHUB_SECRET'], 'UTF-8')
