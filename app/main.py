@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request
 from .extensions import limiter, cache
 import requests
 import json
+from .misc import get_contributors_json
 
 main_blueprint = Blueprint("main", __name__)
 
@@ -61,13 +62,7 @@ def gallery():
 @limiter.limit("5 per minute; 1 per 10 seconds")
 @cache.cached(timeout=120)
 def about():
-    contributors = requests.get("https://api.github.com/repos/laundmo/packpng/stats/contributors").json()
-    contributors = sorted(contributors, key=lambda x: x['total'], reverse=True)
-    for contrib in contributors:
-        added = sum([w['a'] for w in contrib['weeks']])
-        deleted = sum([w['d'] for w in contrib['weeks']])
-        contrib["added"] = added
-        contrib["deleted"] = deleted
+    contributors = get_contributors_json()
     return render_template('about.html', contributors=contributors)
 
 @main_blueprint.route('/details/')
