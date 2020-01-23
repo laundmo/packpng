@@ -2,7 +2,7 @@
   {
     "thumbnail_path" : "thumbnails/thumbnail_acacia_tree_evening.png",
     "image_path": "gallery/acacia_tree_evening.png",
-    "message" : "A drawing receration of pack.png"
+    "message" : "A drawn receration of pack.png"
   },
   {
     "thumbnail_path" : "thumbnails/thumbnail_blockcount.jpg",
@@ -12,12 +12,12 @@
   {
     "thumbnail_path" : "thumbnails/thumbnail_ingame_pixelart2.png",
     "image_path": "gallery/ingame_pixelart2.png",
-    "message" : "Map art of pack.png"
+    "message" : "Pixel art of pack.png in minecraft"
   },
   {
     "thumbnail_path" : "thumbnails/thumbnail_ingame_pixelart.png",
     "image_path": "gallery/ingame_pixelart.png",
-    "message" : "Pixel art of pack.png in minecraft"
+    "message" : "Map art of pack.png"
   },
   {
     "thumbnail_path" : "thumbnails/thumbnail_pack.png",
@@ -25,23 +25,8 @@
     "message" : "The original pack.png"
   },
   {
-    "thumbnail_path" : "thumbnails/thumbnail_rebuilt1.jpg",
-    "image_path": "gallery/rebuilt1.jpg",
-    "message" : "Image from the pack.png terrain rebuilding project"
-  },
-  {
-    "thumbnail_path" : "thumbnails/thumbnail_unknown_upscale_1.png",
-    "image_path": "gallery/unknown_upscale_1.png",
-    "message" : ""
-  },
-  {
     "thumbnail_path" : "thumbnails/thumbnail_upscale.png",
     "image_path": "gallery/upscale.png",
-    "message" : ""
-  },
-  {
-    "thumbnail_path" : "thumbnails/thumbnail_unknown_upscale_2.png",
-    "image_path": "gallery/unknown_upscale_2.png",
-    "message" : "An upcaled image of pack.png by a custom AI"
+    "message" : "The currently best upscale of pack.png. Created using a custom AI."
   }
 ]
