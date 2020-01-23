@@ -5,6 +5,7 @@ import json
 import subprocess
 import hmac
 import hashlib
+import os
 
 redeploy_blueprint = Blueprint("redeploy", __name__)
 
