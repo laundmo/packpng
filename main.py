@@ -49,6 +49,7 @@ def index():
 
 
 @app.route('/faq/')
+@app.route('/FAQ/')
 @cache.cached(timeout=120)
 def faq():
     with open('./data/faq.json', encoding="utf8") as faq_json:
