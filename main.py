@@ -95,26 +95,25 @@ def about():
 @app.route('/redeploy', methods = ['POST'])
 def redeploy():
     signature = request.headers.get('X-Hub-Signature')
-    raw_data = request.get_data() 
-    match, digest = verify_hmac_hash(raw_data, signature)
-    if match:
+    data = request.data
+    if verify_hmac_hash(data, signature):
         if request.headers.get('X-GitHub-Event') == "ping":
             return "OK"
         elif request.headers.get('X-GitHub-Event') == "push":
-            if "deploy" in request.form['ref']:
+            payload = request.get_json()
+            if "deploy" in payload['ref']:
                 subprocess.Popen("./pull_restart.sh", shell=True, executable='/bin/bash')
                 return "started"
             return "wrong branch"
         else:
             return ("wrong event type", 401)
     else:
-        return (f"could not verify signature\ncalculated signature:\n{digest}\nsignature header\n{signature}\ndata:\n{request.data}", 401)
+        return (f"could not verify signature", 401)
 
 def verify_hmac_hash(data, signature):
-    github_secret = os.environ['GITHUB_SECRET'].encode()
-    hmac_gen  = hmac.new(github_secret, data, hashlib.sha1)
-    digest = 'sha1=' + hmac_gen.hexdigest()
-    return (hmac.compare_digest(digest, signature), digest)
+    github_secret = bytes(os.environ['GITHUB_SECRET'], 'UTF-8')
+    mac = hmac.new(github_secret, msg=data, digestmod=hashlib.sha1)
+    return hmac.compare_digest('sha1=' + mac.hexdigest(), signature)
 
 # example route config
 #
