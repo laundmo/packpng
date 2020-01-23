@@ -2,10 +2,13 @@ import json
 from pathlib import Path
 import os
 import requests
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_caching import Cache
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+
+import hmac
+import hashlib
 
 app = Flask(__name__)
 try:
@@ -88,6 +91,21 @@ def about():
         contrib["added"] = added
         contrib["deleted"] = deleted
     return render_template('about.html', contributors=contributors)
+
+@app.route('/redeploy', methods = ['POST'])
+def redeploy():
+    signature = request.headers.get('X-Hub-Signature')
+    if verify_hmac_hash(request.data, signature):
+        try:
+            if "deploy" in request.form['ref']:
+                os.execl("./pull_restart.sh")
+        except KeyError:
+            return ("you cannot do this", 401)
+
+def verify_hmac_hash(data, signature):
+    github_secret = bytes(os.environ['GITHUB_SECRET'], 'UTF-8')
+    mac = hmac.new(github_secret, msg=data, digestmod=hashlib.sha1)
+    return hmac.compare_digest('sha1=' + mac.hexdigest(), signature)
 
 # example route config
 #
