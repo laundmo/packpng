@@ -3,6 +3,8 @@ branch = True
 source = ./
 omit =
     wsgi.py
+    app/extensions.py
+    app/redeploy.py
 
 [report]
 # Regexes for lines to exclude from consideration

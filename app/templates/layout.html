@@ -1,11 +1,11 @@
 {% set navigation_bar = [
-    ('index', 'The Project'),
-    ('faq', 'FAQ'),
-    ('contributors', 'Contributors'),
-    ('timeline', 'Timeline'),
-    ('google_doc', 'Google Doc'),
-    ('gallery', 'Gallery'),
-    ('about', 'About')
+    ('main.index',          'index',        'The Project'),
+    ('main.faq',            'faq',          'FAQ'),
+    ('main.contributors',   'contributors', 'Contributors'),
+    ('main.timeline',       'timeline',     'Timeline'),
+    ('main.google_doc',     'google_doc',   'Google Doc'),
+    ('main.gallery',        'gallery',      'Gallery'),
+    ('main.about',          'about',        'About')
 ] -%}
 {#
     this adds pages to the navbar. the pages need to have a route in the main.py first. the first part is the name of the function in main.py, the secodn one is the display name 
@@ -49,11 +49,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
-                    {% for funcname, caption in navigation_bar %}
-                    <li class="nav-item {% if funcname == active_page %}active{% endif
+                    {% for funcname, name, caption in navigation_bar %}
+                    <li class="nav-item {% if name == active_page %}active{% endif
                         %}">
                         <a class="nav-link"
-                            href="{{ url_for(funcname) }}">{{ caption|e }}{% if funcname == active_page %}<span
+                            href="{{ url_for(funcname) }}">{{ caption|e }}{% if name == active_page %}<span
                                 class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                     {% endfor %}

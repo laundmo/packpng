@@ -1,4 +1,4 @@
-from main import app
+from app.app_factory import create_app
 import unittest 
 
 
@@ -6,7 +6,7 @@ class FlaskTests(unittest.TestCase):
 
     def setUp(self):
         # creates a test client
-        self.app = app.test_client()
+        self.app = create_app().test_client()
         # propagate the exceptions to the test client
         self.app.testing = True 
     
@@ -70,7 +70,7 @@ class FlaskTests(unittest.TestCase):
 class ScriptTests(unittest.TestCase): 
     def test_thumbnails(self):
         try:
-            import static.generate_thumbnails
+            import app.static.generate_thumbnails
         except Exception as e:
             self.fail(f"generate_thumbnails.py failed: {e}")
         
