@@ -3,16 +3,6 @@
 
 because the original page was made in a website builder and thats just oof
 
-## DEMO VERSION
-
-http://116.203.96.150/
-
-attention: not encrypted
-
-![](https://i.vgy.me/RigZjy.png)
-![](https://i.vgy.me/4BrLsR.png)
-![](https://i.vgy.me/F18U9o.png)
-
 ## how to run
 
 you need a recent python 3, i tested on 3.8.0
