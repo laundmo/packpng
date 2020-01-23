@@ -15,6 +15,9 @@ a.unlink:hover {
 {% endblock %}
 
 {% block content %}
+<h2>Repository</h2>
+<a href="https://github.com/laundmo/packpng"><img src="https://gh-card.dev/repos/laundmo/packpng.svg"></a>
+<h3>Contributors</h3>
 <div class="card-columns">
 {% for contributor in contributors %}
 <a class="card unlink" style="width: 15vw;" href="{{contributor['author']['html_url']}}">
