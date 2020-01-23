@@ -1,4 +1,4 @@
-git checkout -b backup-changes
+git checkout backup-changes
 git add .
 git commit -m "automatic commit of deployment changes"
 git push -u origin backup-changes
