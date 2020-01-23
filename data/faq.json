@@ -17,7 +17,7 @@
     },
     {
         "Q": "How can I help crack the seed",
-        "A": "You need 1 of the following:\n1. Enterprise grade computing hardware. No, a good gaming GPU isn't enough.\n2. The ability to help in reverse engineering the world generator code."
+        "A": "You need 1 of the following:<br>1. Enterprise grade computing hardware. No, a good gaming GPU isn't enough.<br>2. The ability to help in reverse engineering the world generator code."
     },
     {
         "Q": "What is pack.png?",
@@ -37,7 +37,7 @@
     },
     {
         "Q": "How many seeds are there?",
-        "A": "2^48*0.82 seeds.\n230,809,480,902,738\n230.8 Trillion "
+        "A": "2^48*0.82 seeds.<br>230,809,480,902,738<br>230.8 Trillion "
     },
     {
         "Q": "Can I help with this?",
