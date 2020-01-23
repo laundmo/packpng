@@ -1,3 +1,6 @@
+.table {
+   table-layout: fixed;    
+}
 
 .text_cell_td {
     white-space: nowrap;
@@ -5,9 +8,7 @@
 
 .text_cell_div {
     overflow-x: auto;
-    width: 35vw;
 }
 .text_cell_div_small {
     overflow-x: auto;
-    width: 10vw;
 }
