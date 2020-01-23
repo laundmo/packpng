@@ -61,19 +61,24 @@
             </div>
         </nav>
         <div style="position: fixed; bottom: -5px; right: 0; z-index: 999;">
-
-            <iframe class="collapse show" id="discord-collapsible" frameBorder="0" height="500px"
+            <iframe class="collapse show" id="discord-collapsible" frameBorder="0" style="height:50vh;"
                 src="https://discordapp.com/widget?id=436405308458401803&theme=dark">
             </iframe>
-            <button type="button" class="close float-left" aria-label="Close" data-toggle="collapse" href="#discord-collapsible" role="button" aria-expanded="false" aria-controls="discord-collapsible">
+            <button type="button" class="text-danger close float-left" aria-label="Close" data-toggle="collapse"
+                href="#discord-collapsible" role="button" aria-expanded="false" aria-controls="discord-collapsible">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="container-fluid">
-            {% block content %}
-            {% endblock %}
+        <div class="container p-0">
+            <div class="row no-gutters">
+                <div class="col-xs-12 p-0 w-100">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
         </div>
-
+        {% block nocenter %}
+        {% endblock %}
     </body>
 
 </html>

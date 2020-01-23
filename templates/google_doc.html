@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 {% set active_page = "google_doc" %}
 
-{% block content %}
-<div class="text-center justify-content-center">
-<iframe style="width:45vw; height:100vh; border:none;" src="https://docs.google.com/document/d/e/2PACX-1vTe3Sr0uUMyx8GZOkcVO53q0HtHWyFKJo1lpBjlwPNKaU4A64Q1TyFmgoT33ThB31CWyKrg5w7hVe7j/pub?embedded=true"> </iframe>
+{% block nocenter %}
+<div class="container p-0">
+    <iframe style="width:100vw; height:100vh; border:none;"
+        src="https://docs.google.com/document/d/e/2PACX-1vTe3Sr0uUMyx8GZOkcVO53q0HtHWyFKJo1lpBjlwPNKaU4A64Q1TyFmgoT33ThB31CWyKrg5w7hVe7j/pub?embedded=true">
+    </iframe>.
 </div>
 {% endblock %}
