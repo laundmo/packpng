@@ -95,7 +95,8 @@ def about():
 @app.route('/redeploy', methods = ['POST'])
 def redeploy():
     signature = request.headers.get('X-Hub-Signature')
-    if verify_hmac_hash(request.data, signature):
+    match, digest = verify_hmac_hash(request.data, signature)
+    if match:
         if request.headers.get('X-GitHub-Event') == "ping":
             return "OK"
         elif request.headers.get('X-GitHub-Event') == "push":
@@ -106,12 +107,13 @@ def redeploy():
         else:
             return ("wrong event type", 401)
     else:
-        return ("could not verify signature", 401)
+        return (f"could not verify signature\ncalculated signature:\n{digest}\nsignature header\n{signature}\ndata:\n{request.data}", 401)
 
 def verify_hmac_hash(data, signature):
     github_secret = os.environ['GITHUB_SECRET'].encode()
     hmac_gen  = hmac.new(github_secret, data, hashlib.sha1)
-    return hmac.compare_digest('sha1=' + hmac_gen.hexdigest(), signature)
+    digest = 'sha1=' + hmac_gen.hexdigest()
+    return (hmac.compare_digest(digest, signature), digest)
 
 # example route config
 #
