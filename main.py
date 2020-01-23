@@ -109,9 +109,9 @@ def redeploy():
         return ("could not verify signature", 401)
 
 def verify_hmac_hash(data, signature):
-    github_secret = bytes(os.environ['GITHUB_SECRET'], 'UTF-8')
-    mac = hmac.new(github_secret, msg=data, digestmod=hashlib.sha1)
-    return hmac.compare_digest('sha1=' + mac.hexdigest(), signature)
+    github_secret = os.environ['GITHUB_SECRET'].encode()
+    hmac_gen  = hmac.new(github_secret, data, hashlib.sha1)
+    return hmac.compare_digest('sha1=' + hmac_gen.hexdigest(), signature)
 
 # example route config
 #
