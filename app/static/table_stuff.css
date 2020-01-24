@@ -12,3 +12,7 @@
 .text_cell_div_small {
     overflow-x: auto;
 }
+
+.table thead th {
+   width: min-content;
+}

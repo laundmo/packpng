@@ -1,7 +1,7 @@
 [
     {
         "Q": "What is this about?",
-        "A": "This is about finding the seed of the mysterious \"pack.png\"image that Minecraft uses. All of this started with a YouTube video made by SalC1"
+        "A": "This is about finding the seed of the mysterious \"pack.png\" image that Minecraft uses. All of this started with a YouTube video made by SalC1."
     },
     {
         "Q": "Are you just trying random seeds until you find it?",
@@ -13,7 +13,7 @@
     },
     {
         "Q": "Have you tried seed X?",
-        "A": "You can scroll down <a href=\"https://packpng.com/\">here</a> to see a incomplete list of seeds we have tried. People have tried way more than these, but these are the important ones. Sadly, trying seeds isn't really helpful."
+        "A": "You can go <a href=\"https://packpng.com/\">here</a> to see a incomplete list of seeds we have tried. People have tried way more than these, but these are the important ones. Sadly, trying seeds isn't really helpful."
     },
     {
         "Q": "How can I help crack the seed",
@@ -25,11 +25,11 @@
     },
     {
         "Q": "What information could you extract from the image?",
-        "A": "We know that the player is looking towards -z/+x from the water animation direction. We also know based off the cloud pattern that, if the image was taken within 10 minutes of spawning, the mountain cant be further than 3074 block from the spawn location."
+        "A": "We know that the player is looking towards -z/+x from the water animation direction. We also know based off the cloud pattern that if the image was taken within 10 minutes of spawning, the mountain cant be further than 3074 block from the spawn location."
     },
     {
         "Q": "Who made this website?",
-        "A": "Head over to <a href=\"https://packpng.com/about\"> the about page</a> to see the contributors to this page!"
+        "A": "Head over to the <a href=\"https://packpng.com/about\">about</a> page to see the contributors to this page!"
     },
     {
         "Q": "Do you have enough processing power? I could rent out stuff from X",
