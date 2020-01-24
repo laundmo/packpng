@@ -41,3 +41,12 @@ go to `app/templates/layout.html` and look at the top of the file. add a new ele
 make sure to set the correct active page in your template using `{% set active_page = "mypage" %}`. here we use the arbitrary name we defined before
 
 link to pages with `{{ url_for('blueprint.function') }}` and to static files with `{{ url_for('static', filename='pack.png') }}`
+
+
+## Pushing Updates
+
+Make a pull request into the "deploy" branch. 
+
+Then the server should grab the changes from the deploy branch and restart, once the pull request is accepted/merged.
+
+Do not deploy too often, and make sure that all tests have run before merging!
