@@ -5,11 +5,6 @@
     "message" : "A drawn receration of pack.png"
   },
   {
-    "thumbnail_path" : "thumbnails/thumbnail_blockcount.jpg",
-    "image_path": "gallery/blockcount.jpg",
-    "message" : "A count of how many blocks total are in the pack.png image"
-  },
-  {
     "thumbnail_path" : "thumbnails/thumbnail_ingame_pixelart2.png",
     "image_path": "gallery/ingame_pixelart2.png",
     "message" : "Pixel art of pack.png in minecraft"
