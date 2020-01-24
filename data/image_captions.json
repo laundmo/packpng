@@ -33,5 +33,10 @@
     "thumbnail_path" : "thumbnails/thumbnail_3dmodel_Herbas_5742.png",
     "image_path": "gallery/3dmodel_Herbas_5742.png",
     "message" : "3D model created by Herbas#5742"
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_ractraced_LiquidDev_4561.png",
+    "image_path": "gallery/ractraced_LiquidDev_4561.png",
+    "message" : "Raytraced recreation of pack.png by LiquidDev#4561"
   }
 ]
