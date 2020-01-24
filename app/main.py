@@ -71,5 +71,5 @@ def details():
     with open('./data/pack_metadata.txt', encoding="utf8") as metadata_file:
         lines = metadata_file.readlines()
         lines = filter(lambda l: l[0] != "-", lines)
-        lines = [[f.strip() for f in l.split(":")] for l in lines]
+        lines = [[f.strip() for f in l.split(":", 1)] for l in lines]
         return render_template('details.html', metadata=lines)
