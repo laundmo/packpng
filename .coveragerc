@@ -3,6 +3,7 @@ branch = True
 source = ./
 omit =
     wsgi.py
+    run.py
     app/extensions.py
     app/redeploy.py
 
