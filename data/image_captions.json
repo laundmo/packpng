@@ -46,17 +46,17 @@
   },
   {
     "thumbnail_path" : "thumbnails/thumbnail_image_colors.png",
-    "image_path" : "gallery/image_colors.png"
+    "image_path" : "gallery/image_colors.png",
     "message" : "rbg values of various biomes in pack.png"
   },
   {
-    "thumbnail_path" : "thumbnails/thumbnail_zeaaez.png"
-    "image_path" : "gallery/zeaaez.png"
+    "thumbnail_path" : "thumbnails/thumbnail_zeaaez.png",
+    "image_path" : "gallery/zeaaez.png",
     "message" : "A graph of how long finding the pack.png seed would take using the following methods"
   },
   {
-    "thumbnail_path" : "thumbnails/thumbnail_the_seed.jpg"
-    "image_path" : "gallery/the_seed.jpg"
+    "thumbnail_path" : "thumbnails/thumbnail_the_seed.jpg",
+    "image_path" : "gallery/the_seed.jpg",
     "message" : "A meme about finding the pack.png seed"
   }
 ]
