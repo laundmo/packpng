@@ -33,5 +33,15 @@
     "thumbnail_path" : "thumbnails/thumbnail_ractraced_LiquidDev_4561.png",
     "image_path": "gallery/ractraced_LiquidDev_4561.png",
     "message" : "Raytraced recreation of pack.png by LiquidDev#4561"
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_cellshaded_rebuilt1.jpg",
+    "image_path": "gallery/cellshaded_rebuilt1.jpg",
+    "message" : "Screenshot of the rebuild project, lightly cellshaded"
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_cellshaded_rebuilt2.jpg",
+    "image_path": "gallery/cellshaded_rebuilt2.jpg",
+    "message" : "Screenshot of the rebuild project, sunrise cellshaded"
   }
 ]
