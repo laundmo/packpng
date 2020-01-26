@@ -5,11 +5,6 @@
     "message" : "A drawn receration of pack.png"
   },
   {
-    "thumbnail_path" : "thumbnails/thumbnail_blockcount.jpg",
-    "image_path": "gallery/blockcount.jpg",
-    "message" : "A count of how many blocks total are in the pack.png image"
-  },
-  {
     "thumbnail_path" : "thumbnails/thumbnail_ingame_pixelart2.png",
     "image_path": "gallery/ingame_pixelart2.png",
     "message" : "Pixel art of pack.png in minecraft"
@@ -27,6 +22,11 @@
   {
     "thumbnail_path" : "thumbnails/thumbnail_upscale.png",
     "image_path": "gallery/upscale.png",
+    "message" : "The first good upscale of pack.png. Created using a custom AI."
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_upscale.png",
+    "image_path": "gallery/upscale.png",
     "message" : "The currently best upscale of pack.png. Created using a custom AI."
   },
   {
@@ -38,5 +38,20 @@
     "thumbnail_path" : "thumbnails/thumbnail_ractraced_LiquidDev_4561.png",
     "image_path": "gallery/ractraced_LiquidDev_4561.png",
     "message" : "Raytraced recreation of pack.png by LiquidDev#4561"
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_cellshaded_rebuilt1.jpg",
+    "image_path": "gallery/cellshaded_rebuilt1.jpg",
+    "message" : "Screenshot of the rebuild project, lightly cellshaded"
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_cellshaded_rebuilt2.jpg",
+    "image_path": "gallery/cellshaded_rebuilt2.jpg",
+    "message" : "Screenshot of the rebuild project, sunrise cellshaded"
+  },
+  {
+    "thumbnail_path" : "thumbnails/thumbnail_overlay_render.png",
+    "image_path" : "gallery/overlay_render.png",
+    "message" : "A render that displays the image in 3D by Brastin3#1871"
   }
 ]
