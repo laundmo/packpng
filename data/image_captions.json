@@ -54,10 +54,4 @@
     "image_path" : "gallery/overlay_render.png",
     "message" : "A render that displays the image in 3D by Brastin3#1871"
   }
-  {
-    "thumbnail_path" : "thumbnails/thumbnail_unityversion_molasses.png",
-    "image_path" : "gallery/molasses_version.png",
-    "message" : "A render that displays the image in 3D by Brastin3#1871"
-  } 
-  
 ]
