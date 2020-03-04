@@ -73,3 +73,8 @@ def details():
         lines = filter(lambda l: l[0] != "-", lines)
         lines = [[f.strip() for f in l.split(":", 1)] for l in lines]
         return render_template('details.html', metadata=lines)
+
+@main_blueprint.route('/roadmap/')
+@cache.cached(timeout=120)
+def roadmap():
+    return render_template('roadmap.html')
