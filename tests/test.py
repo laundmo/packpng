@@ -34,10 +34,10 @@ class FlaskTests(unittest.TestCase):
         # assert the status code of the response
         self.assertEqual(result.status_code, 200)
     
-    def test_google_doc_status_code(self):
+    def test_method_status_code(self):
         # sends HTTP GET request to the application
         # on the specified path
-        result = self.app.get('/google_doc/') 
+        result = self.app.get('/method/') 
 
         # assert the status code of the response
         self.assertEqual(result.status_code, 200)
