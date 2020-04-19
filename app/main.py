@@ -43,7 +43,7 @@ def contributors():
 
 @main_blueprint.route('/method/')
 @cache.cached(timeout=120)
-def google_doc():
+def method():
     return render_template('method.html')
 
 @main_blueprint.route('/timeline/')
