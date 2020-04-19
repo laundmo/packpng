@@ -41,10 +41,10 @@ def contributors():
         contributors = json.load(contrib_json)
         return render_template('contributors.html', contributors=contributors)
 
-@main_blueprint.route('/google_doc/')
+@main_blueprint.route('/method/')
 @cache.cached(timeout=120)
 def google_doc():
-    return render_template('google_doc.html')
+    return render_template('method.html')
 
 @main_blueprint.route('/timeline/')
 @cache.cached(timeout=120)
