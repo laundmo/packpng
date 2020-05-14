@@ -19,12 +19,11 @@ main_blueprint = Blueprint("main", __name__)
 @main_blueprint.route('/')
 @cache.cached(timeout=120)
 def index():
-    with open('./data/seeds.json', encoding="utf8") as seeds_json:
-        with open('./data/what_we_know.json', encoding="utf8") as wwk_json:
-            seeds = json.load(seeds_json)
-            what_we_know = json.load(wwk_json)
-            return render_template('index.html', seeds=seeds, what_we_know=what_we_know)
-
+    with open('./data/what_we_know.json', encoding="utf8") as wwk_json:
+        what_we_know = json.load(wwk_json)
+        #with open('./data/know_details.json', encoding="utf8") as kd_json:
+        #    know_details = json.load(kd_json)
+        return render_template('index.html', what_we_know=what_we_know)
 
 @main_blueprint.route('/faq/')
 @main_blueprint.route('/FAQ/')
@@ -53,6 +52,7 @@ def timeline():
 
 @main_blueprint.route('/gallery/')
 @cache.cached(timeout=120)
+# You really shouln't credit via hard coded name and tag. Since they are not permanent. An ID is permanent and there are tools to get Name and tag just from an ID
 def gallery():
     with open('./data/image_captions.json', encoding="utf8") as images_json:
         images = json.load(images_json)

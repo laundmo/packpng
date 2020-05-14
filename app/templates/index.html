@@ -46,28 +46,36 @@
             </li>
             {% endfor %}
         </ul>
+        <!-- Because IDK how to use templates . TO-DO understand how to use templates-->
+        <h3><small class="text-muted">Where can I get more details on the project?</small></h3>
+        <ul>
+            <!-- figure out how to json instead-->
+            <li>
+                By visiting the official Methodology doc which can be found at the botomn of this page
+                <a href="#method">Go To Method</a>
+            </li>
+            <li>
+                By asking one of the lead developers of the pack.png project
+            </li>
+        </ul>
+        <h3><small class="text-muted">What if I want a more basic understanding?</small></h3>
+        <p class="text-justify">
+            If you want to just know the basics of the project, the most popular misunderstandings... Visit the official
+            <a href="https://packpng.com/faq">FAQ</a>
+            It provides most of what a regular person like you would need.
+        </p>
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
             aria-expanded="false" aria-controls="usercollapse">
             Toggle user credits
         </button>
     </div>
-    <br>
-    <div>
-        <h3>Tried seeds</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Seed</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for seed in seeds %}
-                <tr>
-                    <td>{{seed}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div #method>
+        <br>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
+            aria-expanded="false" aria-controls="usercollapse"
+            onclick="window.location.href = 'http://127.0.0.1:5000/method/';">
+            Check out methedology on how we found the seed
+        </button>
     </div>
 </div>
 {% endblock %}
