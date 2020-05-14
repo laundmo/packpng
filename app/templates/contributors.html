@@ -6,30 +6,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Username</th>
-                <th scope="col">Comment</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for contrib in contributors %}
-            <tr>
-                <td class="text_cell_td">{{ contrib["time"] }}</td>
-                <td class="text_cell_td">
-                    <div class="text_cell_div_small">{{ contrib["name"] }}</div>
-                </td>
-                <td class="text_cell_td">
-                    <div class="text_cell_div">{{ contrib["comment"]|urlize(40, true) }}</div>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+<div>
+    <h3>
+        <p class="text-justify">
+            This table of contributors is based on the following <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdbBwn_INIfPT7ZnJhvigHJ4Gkxz_X4i44E1hqxaAddC2OtHA/viewform">Google
+                Form</a>.
+        </p>
+    </h3>
 </div>
+
+
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Time</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contrib in contributors %}
+                <tr>
+                    <td class="text_cell_td">{{ contrib["time"] }}</td>
+                    <td class="text_cell_td">
+                        <div class="text_cell_div_small">{{ contrib["name"] }}</div>
+                    </td>
+                    <td class="text_cell_td">
+                        <div class="text_cell_div">{{ contrib["comment"]|urlize(40, true) }}</div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
