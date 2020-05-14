@@ -3,6 +3,6 @@
         "method": "By visiting the official Methodology doc which can be found at the botomn of this page."
     },
     {
-        "method": "By asking one of the lead developers of the pack.png project.\nFor more information on how, go to https://packpng.com/contacts, or click \"contacts\" in the \"navbar\""
+        "method": "By asking one of the lead developers of the pack.png project.\nFor more information on how, go to <a href=\"https://packpng.com/contacts\">the contacts page</a>., or click \"contacts\" in the \"navbar\""
     }
 ]
