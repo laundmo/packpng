@@ -50,13 +50,13 @@
         <ul>
             {% for way in ways_to_know %}
             <li>
-                {{way["method"]}}
+                {{way["method"]}}   
             </li>
             {% endfor %}
         </ul>
         <h3><small class="text-muted">What if I want a more basic understanding?</small></h3>
         <p class="text-justify">
-            If you want to just know the basics of the project, the most popular misunderstandings... Visit the official
+            If you want to just know the basics of the project, then visit the official
             <a href=
             {{ url_for('.faq') }}
             >FAQ</a>
@@ -66,11 +66,7 @@
             aria-expanded="false" aria-controls="usercollapse">
             Toggle user credits
         </button>
-    </div>
-    <div #method>
-        <br>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
-            aria-expanded="false" aria-controls="usercollapse"
+        <button class="btn btn-primary" type="button" aria-expanded="false"
             onclick="window.location.href = 'http://127.0.0.1:5000/method/';">
             Check out methedology on how we found the seed
         </button>
