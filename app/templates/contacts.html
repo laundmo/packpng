@@ -18,6 +18,7 @@
         <thead>
             <tr>
                 <th scope="col">Acronym</th>
+                <th scope="col">Timestamp</th>
                 <th scope="col">Info</th>
             </tr>
         </thead>
@@ -25,7 +26,10 @@
             {% for contact in contacts %}
             <tr>
                 <td class="text_cell_td">{{ contact["acronym"] }}</td>
-                <td class="text_cell_td">{{ contact["info"] }}</td>
+                <td class="text_cell_td">{{ contact["timestamp"] }}</td>
+                <td class="text_cell_td">
+                    <div class="text_cell_div">{{ contact["info"]|urlize(40, true) }}</div>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
