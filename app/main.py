@@ -78,3 +78,11 @@ def details():
 @cache.cached(timeout=120)
 def roadmap():
     return render_template('roadmap.html')
+
+
+@main_blueprint.route('/contacts/')
+@cache.cached(timeout=120)
+def contacts():
+    with open('./data/contacts.json', encoding="utf8") as cnt_json:
+        cinfo = json.load(cnt_json)
+        return render_template('contacts.html', contacts=cinfo)

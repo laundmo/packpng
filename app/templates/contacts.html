@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% set active_page = "faq" %}
+
+{% block head%}
+<link rel="stylesheet" href="{{ url_for('static', filename='table_stuff.css')}}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center"> Contancts<br><small class="text-muted">Find who to contact for more information on the
+            project</small></h1>
+    <div class="single-post-content-wrapper p-3">
+        <p class="text-justify">
+            In this page we provide a list of contacts.
+        </p>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Acronym</th>
+                <th scope="col">Info</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in contacts %}
+            <tr>
+                <td class="text_cell_td">{{ contact["acronym"] }}</td>
+                <td class="text_cell_td">{{ contact["info"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+</div>
+{% endblock %}
