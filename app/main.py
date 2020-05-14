@@ -19,11 +19,11 @@ main_blueprint = Blueprint("main", __name__)
 @main_blueprint.route('/')
 @cache.cached(timeout=120)
 def index():
-    with open('./data/what_we_know.json', encoding="utf8") as wwk_json:
-        what_we_know = json.load(wwk_json)
-        #with open('./data/know_details.json', encoding="utf8") as kd_json:
-        #    know_details = json.load(kd_json)
-        return render_template('index.html', what_we_know=what_we_know)
+    with open('./data/ways_to_know_more.json', encoding="utf8") as wst_json:
+        with open('./data/what_we_know.json', encoding="utf8") as wwk_json:
+            ways_to_know = json.load(wst_json)
+            what_we_know = json.load(wwk_json)
+            return render_template('index.html', what_we_know=what_we_know, ways_to_know=ways_to_know)
 
 @main_blueprint.route('/faq/')
 @main_blueprint.route('/FAQ/')

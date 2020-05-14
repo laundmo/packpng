@@ -46,17 +46,13 @@
             </li>
             {% endfor %}
         </ul>
-        <!-- Because IDK how to use templates . TO-DO understand how to use templates-->
         <h3><small class="text-muted">Where can I get more details on the project?</small></h3>
         <ul>
-            <!-- figure out how to json instead-->
+            {% for way in ways_to_know %}
             <li>
-                By visiting the official Methodology doc which can be found at the botomn of this page
-                <a href="#method">Go To Method</a>
+                {{way["method"]}}
             </li>
-            <li>
-                By asking one of the lead developers of the pack.png project
-            </li>
+            {% endfor %}
         </ul>
         <h3><small class="text-muted">What if I want a more basic understanding?</small></h3>
         <p class="text-justify">
