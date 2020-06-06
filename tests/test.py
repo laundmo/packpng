@@ -90,9 +90,3 @@ class ScriptTests(unittest.TestCase):
         except Exception as e:
             self.fail(f"generate_thumbnails.py failed: {e}")
         
-    
-    def test_contributor_converter(self):
-        try:
-            import data.contributors_to_json
-        except Exception as e:
-            self.fail(f"contributors_to_json.py failed: {e}")
