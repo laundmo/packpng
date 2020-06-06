@@ -1,35 +1,50 @@
 {% extends "layout.html" %}
 {% set active_page = "contributors" %}
 
-{% block head%}
-<link rel="stylesheet" href="{{ url_for('static', filename='table_stuff.css')}}">
+{% block head %}
+<style>
+    .collapsing {
+        -webkit-transition: none;
+        transition: none;
+        visibility: hidden;
+    }
+
+    .collapse.show {
+        -webkit-transition: none;
+        transition: none;
+        visibility: visible;
+    }
+</style>
 {% endblock %}
 
 {% block content %}
 <div class="container">
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Time</th>
-                <th scope="col">Username</th>
-                <th scope="col">Comment</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for contrib in contributors %}
-            <tr>
-                <td class="text_cell_td">{{ contrib["time"] }}</td>
-                <td class="text_cell_td">
-                    <div class="text_cell_div_small">{{ contrib["name"] }}</div>
-                </td>
-                <td class="text_cell_td">
-                    <div class="text_cell_div">{{ contrib["comment"]|urlize(40, true) }}</div>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+    <h1>Contributors</h1>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
+            aria-expanded="false" aria-controls="usercollapse">
+            Toggle Discord Usernames
+        </button>
+    {% for name, section in contributors.items() %}
+    <h3 class="text-muted"> {{name}} </h3>
+    <ul class="list-group list-group-flush">
+        {% for contrib in section %}
+            <li class="list-group-item">
+            {% set discord_name = contrib["discord_name"] %}
+            {% if contrib["discord_name"] == "" %}
+                {% set discord_name = contrib["name"] %}
+            {% endif %}
+
+            {% if contrib["profile_url"] == "" %}
+                <div class="float-left collapse show text-info" id="usercollapse">{{ contrib["name"] }}</div>
+            {% else %}
+                <a class="float-left collapse show" id="usercollapse" href="{{ contrib["profile_url"] }}">{{ contrib["name"] }}</a>
+            {% endif %}
+            <a class="float-left collapse text-info" id="usercollapse">{{ discord_name }}</a>
+
+            <div class="float-left">&nbsp;{{ contrib["comment"] }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endfor %}
 </div>
 {% endblock %}
