@@ -25,7 +25,7 @@
     },
     {
         "Q": "What information could you extract from the image?",
-        "A": "We know that the player is looking towards -z/+x from the water animation direction. We also know based off the cloud pattern that if the image was taken within 10 minutes of spawning, the mountain cant be further than 3074 block from the spawn location."
+        "A": "We know the player is looking towards -z/+x from the water animation direction. We also know based off the cloud pattern that, if the image was taken within 10 minutes of spawning, the mountain can't be further than 3074 blocks from the spawn location."
     },
     {
         "Q": "Who made this website?",
