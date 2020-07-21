@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% set active_page = "panoramasearch" %}
+
+{% block head %}
+<style>
+    .collapsing {
+        -webkit-transition: none;
+        transition: none;
+        visibility: hidden;
+    }
+
+    .collapse.show {
+        -webkit-transition: none;
+        transition: none;
+        visibility: visible;
+    }
+    body {
+        background-image: url('{{url_for('static', filename='panorama.jpg')}}');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+</style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center"> The Panorama Side-Project<br><small class="text-muted">to find the seed of the
+    Minecraft main-menu background image from minecraft version beta 1.8 through version 1.12</small></h1>
+    <div class="single-post-content-wrapper p-3">
+        <p class="text-justify">This side-project was started by Tomlacko on Sal<sup>C1</sup>'s Discord Channel.
+            While the search for pack.png was still up and running, Tomlacko went out to search the second most memorable picture in minecraft,
+            which was in the game for eight years! The panning background image in Minecraft's main-menu.
+            Together with the help of other seed reverse-engineers and the help of crowd-sourced computational power through Minecraft@Home the
+            seed was found.
+        </p>
+    <br>
+    </div>
+    <h1 <small class="text-white">These are the seeds: </small></h1>
+        <div class="single-post-content-wrapper p-3">
+        <p class="text-white">2151901553968352745  or 8091867987493326313  (Yes, there are two and they both work!)
+        <br>
+                              Coordinates: X=61, Y=75, Z=-68
+        <br>
+                              Version: Beta 1.7.3 (or earlier)
+        </p>
+    </div>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/GaRurhiK-Lk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+</div>
+{% endblock %}
