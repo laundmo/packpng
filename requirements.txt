@@ -1,6 +1,6 @@
 flask==1.1.2
 coverage==5.2.1
-coveralls
+coveralls==2.1.2
 pillow
 requests
 Flask-Limiter
