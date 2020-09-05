@@ -10,15 +10,17 @@
     ('main.about',          'about',        'About')
 ] -%}
 {#
-    this adds pages to the navbar. the pages need to have a route in the main.py first. the first part is the name of the function in main.py, the secodn one is the display name 
+    this adds pages to the navbar. the pages need to have a route in the main.py first. the first part is the name of the function in main.py, the secodn one is the display name
 #}
 
+{% set page_title = page_title|default('The Project') -%}
+{% set page_description = page_description|default('The pack.png project to find the seed of the most iconic image in minecraft history') -%}
 {% set active_page = active_page|default('project') -%}
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <title>pack.png</title>
+        <title>pack.png - {{ page_title }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico')}}">
@@ -33,6 +35,22 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
+
+        <meta name="theme-color" content="#75c1fe">
+        <meta name="description" content="{{ page_description }}">
+
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:title" content="pack.png - {{ page_title }}"/>
+        <meta name="twitter:description" content="{{ page_description }}"/>
+
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="pack.png - {{ page_title }}"/>
+        <meta property="og:description" content="{{ page_description }}"/>
+        <meta property="og:determiner" content="the"/>
+        <meta property="og:locale" content="en_US"/>
+        <meta property="og:site_name" content="pack.png"/>
+        <meta property="og:image" content="{{ url_for('static', filename='pack.png') }}"/>
+
         {% block head %}
 
         {%endblock%}
