@@ -24,50 +24,16 @@
     <img class="image-wrapper float-left pr-3" src="{{url_for('static', filename='pack.png')}}"
         alt="original pack.png" />
     <div class="single-post-content-wrapper p-3">
-        <p class="text-justify">This project was started by <a href="https://www.youtube.com/watch?v=lbR8ZY1Nsm8">this
-                Video</a> by Sal<sup>C1</sup>. The pack.png image can be seen within the Java Edition Minecraft client,
-            when
-            selecting
-            a multiplayer server without a icon, or as the icon of the default texture pack. This image has been in
-            Minecraft for a long time, which explains why it looks off, compared to recent versions of Minecraft. This
-            project aims to find the seed of the world this image was taken from.
+        <p class="text-justify">
+            After 8 months of searching,     we've finally found the infamous pack.png seed! This is just a quick announcement to let you guys know we found it. Turns out it was in the last 5% of seeds we searched with MC@Home (BOINC), which means it’s a good thing we didn’t give up on it.
+            Most of all, many thanks to everyone who helped out with the project! We seriously wouldn’t have been able to do it without you. Special shoutout to those who helped contribute compute power through MC@Home (BOINC)- you made what would have taken thousands of hours to complete on a single computer into something which ran in only a few days. If you’re interested, users niraami and zombie67 were lucky enough to be the ones whose computers processed the pack.png seed.
         </p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/wZGPg6Ckp3Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div>
-        <h3>What we know<br><small class="text-muted">overview</small></h3>
-        <ul>
-            {% for known in what_we_know %}
-            <li>
-                {{known["fact"]|safe}}
-                {% if known["discord_user"]|length > 0 %}
-                <a class="collapse" id="usercollapse"
-                    href="https://discordapp.com/users/{{known["discord_id"]}}">{{known["discord_user"]}}</a>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
-            aria-expanded="false" aria-controls="usercollapse">
-            Toggle user credits
-        </button>
+        <h3>3257840388504953787</h3>
+        That's it, thats the seed. The coordinates are x=49, z=0.
     </div>
     <br>
-    <div>
-        <h3>Tried seeds</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Seed</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for seed in seeds %}
-                <tr>
-                    <td>{{seed}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
 </div>
 {% endblock %}
