@@ -16,7 +16,7 @@
         "A": "You can go <a href=\"https://packpng.com/\">here</a> to see a incomplete list of seeds we have tried. People have tried way more than these, but these are the important ones. Sadly, trying seeds isn't really helpful."
     },
     {
-        "Q": "How can I help crack the seed",
+        "Q": "How can I help crack the seed?",
         "A": "While we are grateful there are many people willing to help, we can't have everyone helping at once, or it would be chaos. So, rather than asking how you can help straight away, try to self-evaluate what you may be able to do to help before asking, then ask \"how can I help with X\"? Realistically at this point, if you are not a skilled programmer, you probably can't help, sorry."
     },
     {
@@ -32,7 +32,7 @@
         "A": "Head over to the <a href=\"https://packpng.com/about\">about</a> page to see the contributors to this page!"
     },
     {
-        "Q": "Do you have enough processing power? I could rent out stuff from X",
+        "Q": "Do you have enough processing power? I could rent out stuff from X.",
         "A": "Yes, we have plenty of processing power. To be exact, 2-6 NVIDIA DGX-2 Supercomputers."
     },
     {
