@@ -20,33 +20,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Contributors</h1>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#usercollapse"
-            aria-expanded="false" aria-controls="usercollapse">
-            Toggle Discord Usernames
-        </button>
-    {% for name, section in contributors.items() %}
-    <h3 class="text-muted"> {{name}} </h3>
-    <ul class="list-group list-group-flush">
-        {% for contrib in section %}
-            <li class="list-group-item">
-            {% set discord_name = contrib["discord_name"] %}
-            {% if contrib["discord_name"] == "" %}
-                {% set discord_name = contrib["name"] %}
-            {% endif %}
-
-            {% if contrib["profile_url"] == "" %}
-                <div class="float-left collapse show text-info" id="usercollapse">{{ contrib["name"] }}</div>
-            {% else %}
-                <a class="float-left collapse show" id="usercollapse" href="{{ contrib["profile_url"] }}">{{ contrib["name"] }}</a>
-            {% endif %}
-            <a class="float-left collapse text-info" id="usercollapse">{{ discord_name }}</a>
-
-            <div class="float-left">&nbsp;{{ contrib["comment"] }}</div>
-            </li>
-        {% endfor %}
-    </ul>
-    {% endfor %}
+<div class="container p-0">
+    <iframe style="width:100%; height:100vh; border:none;"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQyl1PtNRqWdOqfe2Jq4VdCSngcke5iwngy0p_XvcgAk7qxkR2XhKSYnWRTD46VMk1jzcUWBy4AmIED/pub?embedded=true">
+    </iframe>.
 </div>
 {% endblock %}
