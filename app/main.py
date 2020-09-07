@@ -33,9 +33,7 @@ def faq():
 @main_blueprint.route('/contributors/')
 @cache.cached(timeout=120)
 def contributors():
-    with open('./data/contributors.json', encoding="utf8") as contrib_json:
-        contributors = json.load(contrib_json)
-        return render_template('contributors.html', contributors=contributors)
+    return render_template('contributors.html')
 
 @main_blueprint.route('/method/')
 @cache.cached(timeout=120)
