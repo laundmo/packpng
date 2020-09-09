@@ -72,3 +72,9 @@ def details():
 @cache.cached(timeout=120)
 def roadmap():
     return render_template('roadmap.html')
+
+@main_blueprint.route('/panoramasearch/')
+@cache.cached(timeout=120)
+def panoramasearch():
+    return render_template('panoramasearch.html')
+
