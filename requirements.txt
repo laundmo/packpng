@@ -1,5 +1,5 @@
 flask==1.1.2
-coverage==5.2.1
+coverage==5.3
 coveralls==2.1.2
 pillow==7.2.0
 requests==2.24.0
